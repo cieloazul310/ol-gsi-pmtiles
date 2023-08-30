@@ -4,12 +4,12 @@ import { fromLonLat } from 'ol/proj';
 import { Attribution, ScaleLine, defaults as defaultControl } from 'ol/control';
 import vtLayer from './layers/gsi-pmtiles';
 
-import { parseHash } from './utils/handleHash';
+import { parseHash, setPermalink } from './utils/handleHash';
 import './style.css';
 
 const { zoom, center, rotation } = parseHash(window);
 
-new Map({
+const map = new Map({
   target: 'map',
   view: new View({
     center: center || fromLonLat([140.46, 36.37]),
@@ -27,5 +27,4 @@ new Map({
   ]),
 });
 
-// setPermalink(map);
-// setPopstate(map, window);
+setPermalink(map);
