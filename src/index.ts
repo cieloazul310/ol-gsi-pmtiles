@@ -5,7 +5,7 @@ import { Attribution, ScaleLine, defaults as defaultControl } from 'ol/control';
 import vtLayer from './layers/gsi-pmtiles';
 
 import { parseHash, setPermalink } from './utils/handleHash';
-import './style.css';
+import './style.css?inline';
 
 const { zoom, center, rotation } = parseHash(window);
 
