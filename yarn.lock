@@ -26,18 +26,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cieloazul310/ol-gsi-vt@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@cieloazul310/ol-gsi-vt@npm:1.0.1"
-  dependencies:
-    "@cieloazul310/ol-gsi-vt-style": ^1.0.1
-    "@cieloazul310/ol-gsi-vt-style-utils": ^1.0.1
-  peerDependencies:
-    ol: ^6.0.0 || ^7.0.0
-  checksum: 491b172c6496f4f3c4ff998eae177f7c679fb3cf41c9fe5a470f894abc0f4fad1be25ea70bb49000c2aa68b0dfa34139c94a8f2ba8656996694354f22bea636e
-  languageName: node
-  linkType: hard
-
 "@esbuild/android-arm@npm:0.15.9":
   version: 0.15.9
   resolution: "@esbuild/android-arm@npm:0.15.9"
@@ -69,19 +57,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fortawesome/fontawesome-common-types@npm:6.2.0":
-  version: 6.2.0
-  resolution: "@fortawesome/fontawesome-common-types@npm:6.2.0"
-  checksum: 1d0a3340dc2d2798609195cf77f1b0db98f0d87144044eb7cd3d78745baac8509705c6ebc7cce3d9bb36c7d7358ca064f77f39d86478ab1e7aa7aadc344cfd91
+"@fortawesome/fontawesome-common-types@npm:6.4.2":
+  version: 6.4.2
+  resolution: "@fortawesome/fontawesome-common-types@npm:6.4.2"
+  checksum: 4a22932bd0cac65be1d35b739624f366b6c247b60eb5b8f66218957f54ce1cae56e2a20ea88789ede45d1e1c0c1014f160e01c1752122ec174ad0823e60f94bf
   languageName: node
   linkType: hard
 
 "@fortawesome/free-solid-svg-icons@npm:^6.2.0":
-  version: 6.2.0
-  resolution: "@fortawesome/free-solid-svg-icons@npm:6.2.0"
+  version: 6.4.2
+  resolution: "@fortawesome/free-solid-svg-icons@npm:6.4.2"
   dependencies:
-    "@fortawesome/fontawesome-common-types": 6.2.0
-  checksum: b5edf24be491e8493028b7fd2158fb73f3a76491087970609c0ef6a4449fd4744312fe768bfcffc90a5ef86b9980f9ab8ebb36927ba8d9854c2fa638ceadb0ac
+    "@fortawesome/fontawesome-common-types": 6.4.2
+  checksum: 4a365004990d5b1c970fb30c11b284b0b807903d0ecb193eb9b5a5e41ea7c0b8fff5c60480c580a1e44535cf23c5d9c90cb698189741e40ea3e10ac66290709c
   languageName: node
   linkType: hard
 
@@ -1351,6 +1339,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fflate@npm:^0.8.0":
+  version: 0.8.0
+  resolution: "fflate@npm:0.8.0"
+  checksum: 6215f95ee01d620a41e459247a7de7e7117dd23e78ef017c26b64c26f2a880a90eedc77675918bbf816d18cc990f6505cd71be933c67cc48cc1e7ebbff1589ea
+  languageName: node
+  linkType: hard
+
 "file-entry-cache@npm:^6.0.1":
   version: 6.0.1
   resolution: "file-entry-cache@npm:6.0.1"
@@ -2280,7 +2275,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "ol-gsi-vt-template@workspace:."
   dependencies:
-    "@cieloazul310/ol-gsi-vt": ^1.0.1
+    "@cieloazul310/ol-gsi-vt-style": ^1.0.1
     "@types/node": ^18.7.15
     "@typescript-eslint/eslint-plugin": ^5.36.2
     "@typescript-eslint/parser": ^5.36.2
@@ -2291,6 +2286,7 @@ __metadata:
     husky: ^8.0.1
     lint-staged: ^13.0.3
     ol: ^7.1.0
+    ol-pmtiles: ^0.2.0
     prettier: ^2.7.1
     typescript: ^4.8.2
     vite: ^3.1.3
@@ -2304,6 +2300,17 @@ __metadata:
     "@mapbox/mapbox-gl-style-spec": ^13.23.1
     mapbox-to-css-font: ^2.4.1
   checksum: 587a41456b76e1bd592b7594c288661ee8c651e9f1cd038a53ff5c01654b68081911088a6feba6ee3ac133f34072d629f171dbf35cd2f13dab3908d519268978
+  languageName: node
+  linkType: hard
+
+"ol-pmtiles@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "ol-pmtiles@npm:0.2.0"
+  dependencies:
+    pmtiles: ^2.10.0
+  peerDependencies:
+    ol: ">=7.3.0"
+  checksum: ea62268d6ef918ccdff56bcf96438cbe15acbf7caa33592399dcbbd8f329f53335e2a18e3610331265a39f02de881768c4ceb4bd7581ab005f908c2eeadad0f1
   languageName: node
   linkType: hard
 
@@ -2492,6 +2499,15 @@ __metadata:
   bin:
     pidtree: bin/pidtree.js
   checksum: 8fbc073ede9209dd15e80d616e65eb674986c93be49f42d9ddde8dbbd141bb53d628a7ca4e58ab5c370bb00383f67d75df59a9a226dede8fa801267a7030c27a
+  languageName: node
+  linkType: hard
+
+"pmtiles@npm:^2.10.0":
+  version: 2.10.0
+  resolution: "pmtiles@npm:2.10.0"
+  dependencies:
+    fflate: ^0.8.0
+  checksum: c9540202cac1b4475e81c91813879b55e905f3fd0b14a716eb89f8959b0d0bf22f57f4283ffa10d50622c5368478d25803371de873dbe63cdda45d8f0e60168c
   languageName: node
   linkType: hard
 

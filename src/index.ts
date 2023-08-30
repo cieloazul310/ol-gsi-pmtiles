@@ -2,22 +2,21 @@ import Map from 'ol/Map';
 import View from 'ol/View';
 import { fromLonLat } from 'ol/proj';
 import { Attribution, ScaleLine, defaults as defaultControl } from 'ol/control';
-// import gsiVtLayer from './layers/gsi-vt';
-import gsiOptVtLayer from './layers/gsi-opt-vt';
+import vtLayer from './layers/gsi-pmtiles';
 
-import { parseHash, setPermalink, setPopstate } from './utils/handleHash';
+import { parseHash } from './utils/handleHash';
 import './style.css';
 
 const { zoom, center, rotation } = parseHash(window);
 
-const map = new Map({
+new Map({
   target: 'map',
   view: new View({
     center: center || fromLonLat([140.46, 36.37]),
     zoom: zoom || 12,
     rotation: rotation || 0,
   }),
-  layers: [gsiOptVtLayer],
+  layers: [vtLayer],
   controls: defaultControl({
     attribution: false,
   }).extend([
@@ -28,5 +27,5 @@ const map = new Map({
   ]),
 });
 
-setPermalink(map);
-setPopstate(map, window);
+// setPermalink(map);
+// setPopstate(map, window);
