@@ -1,16 +1,16 @@
-import Map from 'ol/Map';
-import View from 'ol/View';
-import { fromLonLat } from 'ol/proj';
-import { Attribution, ScaleLine, defaults as defaultControl } from 'ol/control';
-import vtLayer from './layers/gsi-pmtiles';
+import Map from "ol/Map";
+import View from "ol/View";
+import { fromLonLat } from "ol/proj";
+import { Attribution, ScaleLine, defaults as defaultControl } from "ol/control";
+import vtLayer from "./layers/gsi-pmtiles";
 
-import { parseHash, setPermalink } from './utils/handleHash';
-import './style.css?inline';
+import { parseHash, setPermalink, setPopstate } from "./utils/handleHash";
+import "./style.css";
 
 const { zoom, center, rotation } = parseHash(window);
 
 const map = new Map({
-  target: 'map',
+  target: "map",
   view: new View({
     center: center || fromLonLat([140.46, 36.37]),
     zoom: zoom || 12,
@@ -28,3 +28,4 @@ const map = new Map({
 });
 
 setPermalink(map);
+setPopstate(map, window);
