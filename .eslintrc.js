@@ -1,22 +1,22 @@
 module.exports = {
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'prettier',
-  ],
-  plugins: ['@typescript-eslint', 'prettier'],
-  parser: '@typescript-eslint/parser',
+  extends: ["airbnb-base", "airbnb-typescript/base", "prettier"],
+  parser: "@typescript-eslint/parser",
   env: {
     browser: true,
     node: true,
     es6: true,
   },
   parserOptions: {
-    sourceType: 'module',
-    project: './tsconfig.eslint.json',
-    ecmaVersion: 'latest',
+    sourceType: "module",
+    project: "./tsconfig.eslint.json",
+    ecmaVersion: "latest",
   },
-  rules: {
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
-  },
+  overrides: [
+    {
+      files: [".eslintrc.js", "vite.config.ts"],
+      rules: {
+        "import/no-extraneous-dependencies": "off",
+      },
+    },
+  ],
 };
